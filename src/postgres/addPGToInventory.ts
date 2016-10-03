@@ -14,6 +14,6 @@ export default async function addPGToInventory (
   const client = await pool.connect()
   const pgCatalog = await introspectDatabase(client, config.schemas)
   client.release()
-  addPGCatalogToInventory(inventory, pgCatalog)
+  addPGCatalogToInventory(inventory, pgCatalog, config)
   inventory.addContextAssignment(createPGContextAssignment(pool))
 }
