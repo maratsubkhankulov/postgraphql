@@ -14,5 +14,5 @@ export default async function addPGToInventory (
   },
 ) {
   const pgCatalog = await introspectDatabase(config.pgClient, config.schemas)
-  addPGCatalogToInventory(inventory, pgCatalog)
+  addPGCatalogToInventory(inventory, pgCatalog, config)
 }
